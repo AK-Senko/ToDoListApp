@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* APP UI Styling */
+    --border-radius: 5px;
+    --gap: 10px;
+
+    /* UI Colors */
+    --primary-color: #210535;
+    --secondary-color: #7b337d;
+    --border-color: #c874b2;
+
+    /* UI Fonts */
+    --primary-font: 'Zalando Sans Expanded';
+
+    /* Font Colors */
+    --primary-font-color: #f5d5e0;
+    --secondary-font-color: #7e6d73;
+    /* Animation */
+    --transition: all 200ms ease-in-out;
+
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    padding: 5% 15%;
+    background-color: var(--primary-color);
+    font-family: var(--primary-font);
+}
+
+button,
+input {
+    background-color: var(--secondary-color);
+    outline: none;
+    border: 2px solid var(--border-color);
+    color: var(--primary-font-color);
+}
+
+main {
+    margin: 0 0 10vh 0;
+    padding: 2rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    grid-template-areas:
+        "appHeader appHeader appHeader appHeader"
+        "taskInput taskInput taskDateInput addTaskBtn"
+        "btnContainer btnContainer btnContainer btnContainer"
+        "taskList taskList taskList taskList";
+    gap: var(--gap);
+}
+
+#appHeader {
+    grid-area: appHeader;
+    text-align: center;
+}
+
+#appHeader h1 {
+    color: var(--primary-font-color);
+    text-align: center;
+}
+
+#taskInput {
+    padding: 8px;
+    grid-area: taskInput;
+}
+
+#taskDateInput {
+    padding: 8px;
+    grid-area: taskDateInput;
+}
+
+#addTaskBtn {
+    grid-area: addTaskBtn;
+    transition: var(--transition);
+}
+
+#addTaskBtn:hover {
+    background-color: var(--primary-font-color);
+    color: black;
+    transform: translateY(1.5px);
+}
+
+#btnContainer {
+    margin: 5px 0;
+    display: flex;
+    gap: var(--gap);
+    grid-area: btnContainer;
+}
+
+#btnContainer>button {
+    transition: var(--transition);
+}
+
+#btnContainer>button:hover {
+    background-color: var(--primary-font-color);
+    color: black;
+    transform: translateY(1.5px);
+}
+
+
+
+#sortDateBtn {
+    margin-left: auto;
+}
+
+#taskList {
+    grid-area: taskList;
+    width: 100%;
+    min-height: 25vh;
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+    gap: var(--gap);
+}
+
+#taskList li {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 6px 12px;
+    width: 100%;
+    gap: var(--gap);
+    background-color: var(--secondary-color);
+    color: var(--primary-font-color);
+
+}
+
+.taskName {
+    margin: 0 0 0 12px;
+    flex: 1 1 auto;
+    word-break: break-word;
+}
+
+.taskName.completed {
+    text-decoration: line-through;
+    color: var(--secondary-font-color);
+}
+
+#delDateContainer {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.taskDueDate {
+    margin: 0 12px 0 auto;
+    font-size: 0.85rem;
+}
+
+.deleteTaskBtn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1rem;
+
+}
+
+
+@media (max-width: 600px) {
+    body {
+        padding: 5%;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "appHeader"
+            "taskInput"
+            "taskDateInput"
+            "addTaskBtn"
+            "btnContainer"
+            "taskList";
+    }
+
+    #sortDateBtn {
+        margin-left: 0;
+    }
+}
