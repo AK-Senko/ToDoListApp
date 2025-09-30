@@ -108,7 +108,7 @@ function renderTasks() {
             </span>
             <section id="dateDelContainer">
             <span class="taskDueDate">${task.dueDate}</span>
-            <button class="delTaskBtn">Del</button>
+            <button class="delTaskBtn">&#10006;</button>
             </section>`;
 
 
