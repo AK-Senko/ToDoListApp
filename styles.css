@@ -156,14 +156,19 @@ main {
     font-size: 0.85rem;
 }
 
-.deleteTaskBtn {
+.delTaskBtn {
     border: none;
     background-color: transparent;
     cursor: pointer;
-    font-size: 1rem;
-
+    font-size: 1.2rem;
+    transition: var(--transition);
 }
 
+.delTaskBtn:hover {
+    background-color: var(--primary-font-color);
+    color: black;
+    box-shadow: black 0px 0px 30px;
+}
 
 @media (max-width: 600px) {
     body {
